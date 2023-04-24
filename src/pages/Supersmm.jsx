@@ -12,7 +12,7 @@ function Supersmm() {
 
 
     const getData = async (key = apikey, id = ids) => {
-        
+        let data = '';
 
         let config = {
             method: 'get',
@@ -22,11 +22,12 @@ function Supersmm() {
             data: data
         };
 
+
         axios.request(config)
             .then((response) => {
                 if (response.status === 200) {
                     alert("Call thành công")
-                    console.log(response)
+                   
                     setdata(response.data.data.list)
                     console.log(data)
                 }
@@ -41,6 +42,7 @@ function Supersmm() {
     useEffect(() => {
         getData()
     }, [])
+
     const submit = async()=>{
         const key =  apikey;
         const id = ids
